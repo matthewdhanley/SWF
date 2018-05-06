@@ -11,6 +11,8 @@ import {
   Alert,
 } from 'react-native';
 
+import { Actions } from 'react-native-router-flux';
+
 
 // import mapview from react-native-maps as well as marker and providerproptype
 import MapView, { Marker, ProviderPropType } from 'react-native-maps';
@@ -65,7 +67,7 @@ class PoopMap extends React.Component {
   }
 
   onToiletPress() {
-    Alert.alert("Poop Logger", "You just took a poop!")
+    Actions.logpoop();
   }
 
   render() {
@@ -81,7 +83,7 @@ class PoopMap extends React.Component {
               key={marker.key}
               coordinate={marker.coordinate}
               pinColor={marker.color}
-              image={require('../data/img/poop.png')}
+              image={require('../images/poop.png')}
             />
           ))}
         </MapView>
@@ -92,7 +94,7 @@ class PoopMap extends React.Component {
                 onPress={this.onToiletPress}
                 style={styles.button}>
                 <Image
-                    source={require('../data/img/toilet.png')}
+                    source={require('../images/toilet.png')}
                     style={styles.toilet}
                 />
             </TouchableOpacity>

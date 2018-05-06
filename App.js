@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-import PoopMap from './components/PoopMap';
+import PoopMap from './app/components/PoopMap';
 
 export default class App extends React.Component {
   state = {
